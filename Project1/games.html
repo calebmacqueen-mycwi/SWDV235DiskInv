@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>What We Play</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap -->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.css"/>
+
+  <script type="text/javascript" src="jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+  <!--<script src="scripts/gamesjqui.js"></script>-->
+  <script>
+    $(document).ready(function(){
+      $('.spinner').spinner({
+        min: 0,
+      });
+      $('.sortable').sortable().controlgroup();
+    });
+  </script>
+  <script src="scripts/a&aBatSim.js"></script>
+  <script src="scripts/slideshow.js"></script>
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and
+media queries -->
+  <!--  Respond.js doesn't work if you view the page
+ via file:// -->
+  <!--[if lt IE 9]>
+ <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/
+ html5shiv.js"></script>
+ <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/
+ respond.min.js"></script>
+ <![endif]-->
+</head>
+
+<body>
+  <div><img src="images/desktopBackground.png" class="bg">
+    <div class="container">
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="index.html">WWII Games</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Home</a></li>
+            <li class="active"><a class="dropdown-toggle" data-toggle="dropdown" href="games.html">Games <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="games.html#a&a">Axis and Allies</a></li>
+                <li><a href="games.html#landMinis">Axis and Allies Miniatures</a></li>
+                <li><a href="games.html#seaMinis">War at Sea Miniatures</a></li>
+                <li><a href="games.html#coh2">Company of Heroes 2</a></li>
+              </ul>
+            </li>
+            <li><a class="dropdown-toggle" data-toggle="dropdown" href="about.html">About Us <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="contact.aspx">Contact Us</a></li>
+                    <li><a href="newsletter.aspx">Newsletter</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <header>
+        <div class=" container-fluid row">
+          <img src="images/banner.jpg" class="image-responsive bannerImage">
+        </div>
+      </header>
+
+      <main>
+        <div class="row">
+          <div class="col-md-1">
+          </div>
+          <div class="col-md-10">
+        <section id="a&a">
+          <div id="sampledialog">
+              <h1>Axis and Allies</h1>
+              <p>Axis and Allies is an amazing board game. When playing, you control one or more of the major powers from World War II. Such as the United States, the United Kingdom, the USSR, Germany, or Japan. The game plays sort of like Risk, but with
+                tons more depth, such as having each unit (such as tanks, infantry, and artillery) fight differently. Because of the increased depth, be prepared for an extended game, that can last for an entire day.</p>
+              <p>Your goal is to work with your allies to either take control of your opponent's capital cities, or beat them into submission.</p></div>
+              <div class="panel-group">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4><a data-toggle="collapse" href="#batSim">Show/Hide Battle Simulator</a></h4>
+                  </div>
+                  <div id="batSim" class="panel-collapse collapse">
+                    <p>Use the text fields to enter the numbers of units. <a href="faq.html#collapse1">How does this work</a>?</p>
+                    <div class="row">
+                      <div class="col-md-1">
+                      </div>
+                      <div class="col-md-5">
+                        <form>
+                          <h4>Attacker</h4>
+                          <div class="sortable">
+                            <label>Infantry: <span class="spinWrapper"><input class="spinner" name="attInf" id="attInf" value="0" size="3"></span></label><br>
+                            <label>Artillery: <span class="spinWrapper"><input class="spinner" name="attArt" id="attArt" value="0" size="3"></span></label><br>
+                            <label>Armor: <span class="spinWrapper"><input class="spinner" name="attTnk" id="attTnk" value="0" size="3"></span></label><br>
+                            <label>Fighters: <span class="spinWrapper"><input class="spinner" name="attFtr" id="attFtr" value="0" size="3"></span></label><br>
+                            <label>Bombers: <span class="spinWrapper"><input class="spinner" name="attBmr" id="attBmr" value="0" size="3"></span></label><br>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="col-md-5">
+                        <form>
+                          <h4>Defender</h4>
+                          <div class="sortable">
+                            <label>Infantry: <span class="spinWrapper"><input class="spinner" name="defInf" id="defInf" value="0" size="3"></span></label><br>
+                            <label>Artillery: <span class="spinWrapper"><input class="spinner" name="defArt" id="defArt" value="0" size="3"></span></label><br>
+                            <label>Armor: <span class="spinWrapper"><input class="spinner" name="defTnk" id="defTnk" value="0" size="3"></span></label><br>
+                            <label>Fighters: <span class="spinWrapper"><input class="spinner" name="defFtr" id="defFtr" value="0" size="3"></span></label><br>
+                            <label>Bombers: <span class="spinWrapper"><input class="spinner" name="defBmr" id="defBmr" value="0" size="3"></span></label><br>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="col-md-5">
+                      </div>
+                      <div class="col-md-1">
+                      </div>
+                    </div>
+                    <div class="runSim">
+                      <button class="btn-success" onclick="runSim()">Run Simulation</button><br>
+                      <div class="output">
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- end of panel group. interior row necessary for arranging form -->
+        </section>
+
+        <section id="landMinis">
+              <h1>Axis and Allies Miniatures</h1>
+              <p>This World War II miniatures game has been out of print for a while, but remains fun to play. The game focuses on small-scale engagements, typically between a
+                couple tanks and small squads of infantry. The game has a wide variety of units, ranging from Russian conscripts to King Tigers.</p>
+        </section>
+
+        <section id="seaMinis">
+          <h1>War at Sea</h1>
+          <p>This miniatures game is very similar to Axis and Allies miniatures, but take place at sea (After all, they were made by the same company). The game works really
+            well, but we feel like the recommmended 100 point limit for fleets is too small, so we often play 200 point games.</p>
+          <p>The reason that a 100 point game feels so small is that in order to both preserve game balance, along with a sense of realism, battleships cost well over 50 points,
+            and even going as high as 80 points. Aircraft carriers are not much better. Although you only pay about 20 points for the carrier, you have to pay 30-50 more points to put
+            planes on it. All of these issues are irrelevant if you just give each player some extra points to work with. The only downside is that games take longer.</p>
+        </section>
+
+        <section id="coh2">
+          <h1>Company of Heroes 2</h1>
+          <div class="right">
+            <ul id="image_list">
+                <li><a href="images/one.jpg"></a></li>
+                <li><a href="images/two.jpg"></a></li>
+                <li><a href="images/three.jpg"></a></li>
+                <li><a href="images/four.jpg"></a></li>
+                <li><a href="images/five.jpg"></a></li>
+            </ul>
+            <p><img src="images/one.jpg" alt="Catch and Release" id="image"></p>
+            <p>
+                <input type="button" id="start" value="Start">
+                <input type="button" id="pause" value="Pause" disabled="true">
+            </p>
+
+          </div>
+          <p>This real-time strategy game incorporates some really cool features that I haven&#39;t seen in any other game. The economy is directly tied in to map control, so you
+            do not have to constantly go back to your base to make sure you are gathering the right recources. This frees you up to focus on keeping your tanks alive (very difficult for
+            the Americans. Shermans are not known for their armor).</p>
+          <p>Second, in most real-time strategy games units can see 360 degrees around them, regardless of what happens to be in the way. Company of Heroes fixes this with what is
+            called the True-Sight system. Most units can still see 360 degrees, but objects, like houses, smoke, and fences block line of sight. This makes avoiding ambushes a lot
+            harder.</p>
+        </section>
+      </div>
+      <div class="col-md-1">
+      </div>
+      </div>
+      </main>
+
+      <footer>
+        <p>Want to play with us?<br>Contact us by email: <a href="mailto=@gmail.com">@gmail.com</a><br> Today is:
+          <script src="scripts/date.js"></script>
+        </p>
+        <!-- finish email address later -->
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

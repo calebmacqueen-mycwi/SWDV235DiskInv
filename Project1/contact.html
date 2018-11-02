@@ -1,0 +1,143 @@
+<!--Caleb MacQueen March 2018 Created file
+    Caleb MacQueen 11/02/2018 Converted to .aspx file-->
+
+<%@ Page Language="C#" %>
+<%@ Import Namespace="System.Data.SqlClient" %>
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Contact Us</title>
+    <meta name="viewport" content="width=device-width, initialscale=1.0">
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.css" />
+
+    <script type="text/javascript" src="jquery-ui-1.12.1.custom/external/jquery/jquery.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+    <script src="scripts/register.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and
+    media queries -->
+    <!--: Respond.js doesn't work if you view the page
+    via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/
+    html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/
+    respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div>
+        <img src="images/desktopBackground.png" class="bg">
+        <div class="container">
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="index.html">WWII Games</a>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <!-- make sure to change class="active" when making new pages -->
+                        <!-- remove class="disabled" as pages are added-->
+                        <li><a href="index.html">Home</a></li>
+                        <li>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="games.html">Games <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="games.html#a&a">Axis and Allies</a></li>
+                                <li><a href="games.html#landMinis">Axis and Allies Miniatures</a></li>
+                                <li><a href="games.html#seaMinis">War at Sea Miniatures</a></li>
+                                <li><a href="games.html#coh2">Company of Heroes 2</a></li>
+                            </ul>
+                        </li>
+                        <li class="active">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="about.html">About Us <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="contact.aspx">Contact Us</a></li>
+                                <li><a href="newsletter.aspx">Newsletter</a></li>
+                                <li><a href="faq.html">FAQ</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <header>
+                <div class=" container-fluid row">
+                    <image src="images/banner.jpg" class="image-responsive bannerImage">
+                </div>
+            </header>
+
+            <main>
+                <div class="row">
+                    <div class="col-md-1">
+                    </div>
+                    <div class="col-md-10">
+                        <p>Do you have any more questions about us? We would like to here what you have to say through the contact form below.</p>
+                        <!--<form>
+                          add spans with ids to display error messages and acceptance message
+                          <label>First Name: <input type="text" name="fname" id="fname"></label><span class="errorFName error"></span><br>
+                          <label>Last Name: <input type="text" name="lname" id="lname"></label><span class="errorLName error"></span><br>
+                          <label for="comments">Please enter your comments:</label><span class="errorComment error"></span><br>
+                                <textarea name="comments" id="comments" rows="6" cols="35"></textarea><br>
+                          <input class="formBtn" type="submit" value="Submit" onclick="checkContact()">
+
+                          <input class="formBtn" type="reset" value="Reset">
+                        </form>
+                        <button class="formBtn" onclick="runCheckContact()">Submit</button>
+                        <p class="success"></p>-->
+                        <form action="register_account.html" method="get" name="registration_form" id="registration_form">
+
+                            <label for="email_address">E-Mail:</label>
+                            <input type="text" name="email_address" id="email_address">
+                            <br>
+                            <label for="phone">Mobile Phone:</label>
+                            <input type="text" name="phone" id="phone">
+                            <br>
+                            <label for="country">Country:</label>
+                            <select name="country" id="country">
+                                <option value="">Select an option</option>
+                                <option>USA</option>
+                                <option>Canada</option>
+                                <option>Mexico</option>
+                            </select>
+                            <br>
+                            <label>Contact me by:</label>
+                            <input type="radio" name="contact" id="text" value="text" checked>Text
+                            <input type="radio" name="contact" id="email" value="email">Email
+                            <input type="radio" name="contact" id="mobile" value="mobile">Mobile phone
+                            <input type="radio" name="contact" id="none" value="none">Don't contact me
+                            <br>
+                            <label>Terms of Service:</label>
+                            <input type="checkbox" name="terms" id="terms" value="yes">I accept
+                            <br>
+                            <label for="comments">Comments:</label>
+                            <textarea name="comments" id="comments" rows="5" cols="40"></textarea>
+                            <br>
+                            <input type="button" id="register" value="Register" onclick="processEntries()">
+                            <input type="button" id="reset_form" value="Reset" onclick="resetForm()">
+                        </form>
+                        <h2 id="registration_header">&nbsp;</h2>
+                        <table id="registration_info"></table>
+                    </div>
+                    <div class="col-md-1">
+                    </div>
+                </div>
+            </main>
+
+            <footer>
+                <p>
+                    Want to play with us?<br>Contact us by email: <a href="mailto=@gmail.com">@gmail.com</a><br> Today is:
+                    <script src="scripts/date.js"></script>
+                </p>
+                <!-- finish email address later -->
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
