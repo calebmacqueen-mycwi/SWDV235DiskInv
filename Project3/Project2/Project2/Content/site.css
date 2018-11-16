@@ -1,0 +1,15 @@
+﻿/*Caleb MacQueen 11/9/2018 Page Created */
+body {
+    background-image: linear-gradient(blue, white);
+    height: 100vh;
+}
+.col-md-10 {
+    background-color: #999999;
+    border-radius: 1em 1em;
+}
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+}
+footer {
+    text-align: center;
+}
