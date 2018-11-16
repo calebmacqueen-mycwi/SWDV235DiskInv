@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeFile="borrower.aspx.cs" Inherits="borrower" Title ="Borrower"%>
 <%--Caleb MacQueen 11/9/2018 Page Created --%>
+<%-- Caleb MacQueen 11/16/2018 DB Connection added, edit,update,delete added --%>
 <asp:Content ID="main" ContentPlaceHolderID="mainPlaceholder" runat="server">
     <h3>You may use this information to edit borrower profiles, or to add a new borrower.</h3>
     <form id="form1" runat="server" class="form-horizontal">

@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeFile="artist.aspx.cs" Inherits="artist" Title="Artist"%>
-
+<%-- Caleb MacQueen 11/16/2018 Page Created --%>
 <asp:Content ID="main" ContentPlaceHolderID="mainPlaceholder" runat="server">
     <h1>Use this interface to edit, delete, or remove items from the database.</h1>
     <form runat="server">
