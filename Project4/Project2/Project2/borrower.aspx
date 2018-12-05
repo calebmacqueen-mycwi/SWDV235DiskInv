@@ -1,69 +1,17 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Site.Master" CodeFile="borrower.aspx.cs" Inherits="borrower" Title ="Borrower"%>
-<%--Caleb MacQueen 11/9/2018 Page Created --%>
-<%-- Caleb MacQueen 11/16/2018 DB Connection added, edit,update,delete added --%>
+<%--Caleb MacQueen 11/9/2018 Page Created
+    Caleb MacQueen 11/16/2018 DB Connection added, edit,update,delete added
+    Caleb MacQueen 12/03/2018 Added RegEx Val to insert phone number field--%>
 <asp:Content ID="main" ContentPlaceHolderID="mainPlaceholder" runat="server">
     <h3>You may use this information to edit borrower profiles, or to add a new borrower.</h3>
     <form id="form1" runat="server" class="form-horizontal">
-    <%--<div class="form-group">
-                    <label class="col-sm-3 control-label">First Name</label>
-                    <div class="col-sm-4">
-                        <asp:TextBox ID="txtFirstName" runat="server" CssClass="form-control"></asp:TextBox>
-                    </div>
-                    <div class="col-sm-5">
-                        <asp:RequiredFieldValidator ID="rfvFirstName" runat="server" 
-                            ControlToValidate="txtFirstName" text="*" CssClass="text-danger" Display="Dynamic">
-                        </asp:RequiredFieldValidator>
-                    </div>
-                </div>
-        <br />
-                <div class="form-group">
-                    <label class="col-sm-3 control-label">Last Name</label>
-                    <div class="col-sm-4">
-                        <asp:TextBox ID="txtLastName" runat="server" CssClass="form-control"></asp:TextBox>
-                    </div>
-                    <div class="col-sm-5">
-                        <asp:RequiredFieldValidator ID="rfvLastName" runat="server" 
-                            ControlToValidate="txtLastName" text="*" CssClass="text-danger" Display="Dynamic">
-                        </asp:RequiredFieldValidator>
-                    </div>
-                </div>
-        <br />
-        <div class="form-group">
-                    <label class="col-sm-3 control-label">Telephone number</label>
-                    <div class="col-sm-4">
-                        <asp:TextBox ID="txtPhone" runat="server" TextMode="Phone" 
-                            CssClass="form-control"></asp:TextBox>
-                    </div>
-                    <div class="col-sm-5">
-                        <asp:RequiredFieldValidator ID="rfvPhone" runat="server" 
-                            ControlToValidate="txtPhone" text="*" CssClass="text-danger" Display="Dynamic">
-                        </asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="revPhone" runat="server" 
-                            ControlToValidate="txtPhone" Text="Use this format: 999-999-9999"
-                            Display="Dynamic" CssClass="text-danger" 
-                            ValidationExpression="((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}">
-                        </asp:RegularExpressionValidator>    
-                    </div>
-                </div>
-        <div class="form-group">
-                    <div class="col-sm-offset-3 col-sm-9">
-                        <asp:Button ID="btnSubmit" runat="server" Text="Submit"
-                             CssClass="btn btn-primary" OnClick="btnSubmit_Click" />
-                        <asp:Button ID="btnClear" runat="server" Text="Clear"
-                             CssClass="btn btn-primary" CausesValidation="false"  />
-                    </div>
-                </div> --%>
+    
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Borrower_ID"
             CssClass="table table-bordered table-condensed" DataSourceID="SqlDataSource2"
             OnRowDeleted="grdCategories_RowDeleted" OnRowUpdated="grdCategories_RowUpdated">
             <Columns>
                 
                 <asp:TemplateField HeaderText="ID">
-                    <EditItemTemplate>
-                        <asp:TextBox ID="txtGridID" runat="server" 
-                                        MaxLength="15" CssClass="form-control disabled"  
-                                        Text='<%# Bind("Borrower_ID") %>'></asp:TextBox>
-                    </EditItemTemplate>
                     <ItemTemplate>
                         <asp:Label ID="lblID" runat="server" Text='<%# Bind("Borrower_ID") %>' />
                     </ItemTemplate>
@@ -191,6 +139,13 @@
                                     ErrorMessage="Phone Number is a required field." Text="*"
                                     ValidationGroup="insertVal">
                                 </asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="revP" runat="server" 
+                            ControlToValidate="Ptxt" Text="Use this format: 999-999-9999"
+                            Display="Dynamic" CssClass="text-danger" 
+                            ValidationExpression="((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}"
+                            ErrorMessage="Please enter the phone number in the correct format."
+                                    ValidationGroup="insertVal">
+                        </asp:RegularExpressionValidator>
                                 <asp:TextBox ID="Ptxt" runat="server" 
                                     Text='<%# Bind("P") %>' CssClass="form-control" />  
                             </InsertItemTemplate>

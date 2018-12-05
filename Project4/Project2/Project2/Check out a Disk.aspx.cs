@@ -13,15 +13,19 @@ public partial class Check_out_a_Disk : System.Web.UI.Page
     }
     private string DatabaseErrorMessage(string errorMsg)
     {
+        //get database error
         return $"<b>A database error has occurred:</b> {errorMsg}";
     }
     protected void dvLoan_ItemInserted(object sender, DetailsViewInsertedEventArgs e)
     {
         if (e.Exception != null)
         {
+            //show the error message
             lblMessage.Text = DatabaseErrorMessage(e.Exception.Message);
             e.ExceptionHandled = true;
         }
-        Response.Redirect("~/Check%20out%20a%20Disk.aspx");
+        //reload the page when an item is checked out, so that the dropdown will repopulate 
+        //and still show only checked in disks
+        Response.Redirect("~/Check%20out%20a%20Disk.aspx"); //note to self: do not put spaces in file names ;}
     }
 }

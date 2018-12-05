@@ -6,6 +6,7 @@
 <asp:Content ID="main" ContentPlaceHolderID="mainPlaceholder" runat="server">
     <form runat="server">
     <br />
+        <%--Use a details view to provide a convenient layout for my form --%>
     <asp:DetailsView ID="dvLoan" runat="server" AutoGenerateRows="False" DataSourceID="SqlDataSource1"
         CssClass="table table-bordered table-condensed" DataKeyNames="CD_ID"
         defaultMode="Insert" OnItemInserted="dvLoan_ItemInserted">
@@ -42,6 +43,7 @@
 
         </Fields>
     </asp:DetailsView>
+        <%--I wrote a new stored procedure for the insert, in order to compartmentalize the code more--%>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:DIConnection %>" InsertCommand="spInsertLoan" InsertCommandType="StoredProcedure" SelectCommand="SELECT Borrower_ID, CD_ID, Borrowed_Date FROM Loan_History">
         <InsertParameters>
             <asp:Parameter Name="CD_ID" Type="Int32" />

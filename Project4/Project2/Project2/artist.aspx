@@ -8,10 +8,6 @@
             OnRowDeleted="grdA_RowDeleted" OnRowUpdated="grdA_RowUpdated">
             <Columns>
                 <asp:TemplateField HeaderText="ID">
-                            <EditItemTemplate>                                
-                                <asp:TextBox ID="IDtxt" runat="server" 
-                                    Text='<%# Bind("Artist_ID") %>' CssClass="form-control disabled" />  
-                            </EditItemTemplate>
                     <ItemTemplate>
                                 <asp:Label ID="lblGridID" runat="server" 
                                     Text='<%# Bind("Artist_ID") %>'></asp:Label>
